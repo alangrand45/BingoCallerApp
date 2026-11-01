@@ -42,21 +42,19 @@ jobs:
 
       - name: Build APK with Buildozer
         run: |
-          script -q -c "buildozer android debug" build_output.log || true
-          echo "=== BUILD OUTPUT LOG TAIL ==="
-          tail -n 150 build_output.log
+          export USER=root
+          script -q -c "buildozer -v android debug" build_output.log || (cat build_output.log && exit 1)
 
       - name: Locate All APK Files
         run: |
-          echo "Listing all .apk files in the repository:"
           find . -name "*.apk" || true
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: package
+          name: bingo-apk
           path: |
             bin/*.apk
             **/*.apk
             *.apk
-          if-no-files-found: ignore
+          if-no-files-found: error
