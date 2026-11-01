@@ -16,7 +16,7 @@ source.dir = .
 source.include_exts = py,png,jpg,kv,atlas,mp3,wav
 
 # (str) Application main file
-source.main_file = bingo1_1.py
+source.main_file = main.py
 
 # (str) Application versioning
 version = 0.1
