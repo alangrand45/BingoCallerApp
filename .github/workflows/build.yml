@@ -43,11 +43,14 @@ jobs:
       - name: Build APK with Buildozer
         run: |
           export USER=root
-          script -q -c "buildozer -v android debug" build_output.log || (cat build_output.log && exit 1)
+          # Run buildozer and ensure the log is printed fully if anything goes wrong
+          buildozer -v android debug || (echo "=== BUILD FAILED ===" && exit 1)
 
-      - name: Locate All APK Files
+      - name: Show Workspace Files
         run: |
-          find . -name "*.apk" || true
+          echo "Checking directory structure:"
+          ls -R
+          find . -name "*.apk"
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
