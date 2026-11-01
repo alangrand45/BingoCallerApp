@@ -52,6 +52,10 @@ android.archs = arm64-v8a
 # (bool) Automatically accept Android SDK license agreements
 android.accept_sdk_license = True
 
+# (str) The format used to package the app for release/debug (apk or aab)
+android.release_artifact = apk
+android.debug_artifact = apk
+
 [buildozer]
 
 # (int) Log level
