@@ -30,6 +30,7 @@ jobs:
           build-essential \
           git \
           libtool \
+          libltdl-dev \
           automake \
           autoconf \
           m4 \
