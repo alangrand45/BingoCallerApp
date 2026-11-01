@@ -33,6 +33,25 @@ orientation = portrait
 # (bool) Fullscreen
 fullscreen = 0
 
+# --- Android Specific Settings ---
+# (int) Target Android API
+android.api = 31
+
+# (int) Minimum API your APK will support
+android.min_api = 21
+
+# (int) Android SDK version to use
+android.sdk = 31
+
+# (str) Android NDK version to use
+android.ndk = 25b
+
+# (str) Android arch to build for
+android.archs = arm64-v8a
+
+# (bool) Automatically accept Android SDK license agreements
+android.accept_sdk_license = True
+
 [buildozer]
 
 # (int) Log level
@@ -40,9 +59,3 @@ log_level = 2
 
 # (int) Warn on root
 warn_on_root = 1
-
-# (str) Android arch
-android.archs = arm64-v8a
-
-# (bool) Automatically accept Android SDK license agreements
-android.accept_sdk_license = True
