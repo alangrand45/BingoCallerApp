@@ -6,6 +6,9 @@ title = Bingo Caller App
 # (str) Package name
 package.name = bingocaller
 
+# Force python-for-android to use a stable version (avoiding python 3.14)
+p4a.python_version = 3.11
+
 # (str) Package domain (needed for android packaging)
 package.domain = org.bingo
 
@@ -19,7 +22,7 @@ source.include_exts = py,png,jpg,kv,atlas,mp3,wav
 version = 0.1
 
 # (list) Application requirements (pinned charset-normalizer avoids wheel incompatibility)
-requirements = python3,kivy,charset-normalizer
+requirements = python3==3.11.16,hostpython3==3.11.16,kivy,charset-normalizer
 
 # (list) Permissions
 android.permissions = INTERNET
