@@ -15,15 +15,11 @@ source.dir = .
 # (list) Source files to include
 source.include_exts = py,png,jpg,kv,atlas,mp3,wav
 
-# (str) Application main file
-source.main_file = main.py
-
 # (str) Application versioning
 version = 0.1
 
-# (list) Application requirements
-
-requirements = python3,kivy,charset-normalizer==3.3.2,requests,urllib3,idna,certifi
+# (list) Application requirements (pinned charset-normalizer version to prevent build failure)
+requirements = python3,kivy,charset-normalizer==3.3.2
 
 # (list) Permissions
 android.permissions = INTERNET
