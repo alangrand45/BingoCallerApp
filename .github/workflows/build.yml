@@ -48,7 +48,7 @@ jobs:
       run: |
         unset ANDROID_NDK_HOME
         unset ANDROID_NDK
-        buildozer -v android debug
+        buildozer -v --debug android debug
 
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4
