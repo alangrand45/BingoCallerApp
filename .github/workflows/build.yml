@@ -44,6 +44,8 @@ jobs:
 
     - name: Build with Buildozer
       run: |
+        unset ANDROID_NDK_HOME
+        unset ANDROID_NDK
         buildozer -v android debug
 
     - name: Upload APK Artifact
