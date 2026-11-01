@@ -42,7 +42,7 @@ jobs:
 
       - name: Build APK with Buildozer
         run: |
-          buildozer android debug
+          buildozer android debug || (echo "=== BUILD FAILED. LOG TAIL: ===" && tail -n 150 .buildozer/logs/buildozer.log && exit 1)
 
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
