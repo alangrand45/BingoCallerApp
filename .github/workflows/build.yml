@@ -4,7 +4,19 @@ on:
   push:
     branches: [ main, master ]
   workflow_dispatch:
-
+- name: Install system dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y \
+          build-essential \
+          git \
+          libtool \
+          automake \
+          autoconf \
+          m4 \
+          libffi-dev \
+          libssl-dev \
+          zlib1g-dev
 jobs:
   build:
     runs-on: ubuntu-24.04 # Pinned to Ubuntu 24.04 to prevent Buildozer toolchain mismatches on Ubuntu 26
