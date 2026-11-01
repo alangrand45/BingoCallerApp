@@ -9,6 +9,9 @@ package.name = bingocaller
 # (str) Package domain (needed for android packaging)
 package.domain = org.bingo
 
+# (str) Source directory where the application lives
+source.dir = .
+
 # (list) Source files to include (letting it include your Python script and media assets)
 source.include_exts = py,png,jpg,kv,atlas,mp3,wav
 
