@@ -4,7 +4,26 @@ on:
   push:
     branches: [ main, master ]
   workflow_dispatch:
-- name: Install system dependencies
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Set up Java
+      uses: actions/setup-java@v5
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+
+    - name: Install system dependencies
       run: |
         sudo apt-get update
         sudo apt-get install -y \
@@ -16,36 +35,7 @@ on:
           m4 \
           libffi-dev \
           libssl-dev \
-          zlib1g-dev
-jobs:
-  build:
-    runs-on: ubuntu-24.04 # Pinned to Ubuntu 24.04 to prevent Buildozer toolchain mismatches on Ubuntu 26
-
-    steps:
-    - uses: actions/checkout@v4
-
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.10'
-
-    - name: Set up Java
-      uses: actions/setup-java@v5 # Migrated to v5
-      with:
-        distribution: 'temurin'
-        java-version: '17'
-
-    - name: Install system dependencies
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y \
-          build-essential \
-          git \
-          libffi-dev \
-          libssl-dev \
           zlib1g-dev \
-          autoconf \
-          libtool \
           pkg-config
 
     - name: Install Buildozer and Cython
@@ -56,7 +46,7 @@ jobs:
     - name: Build with Buildozer
       run: |
         unset ANDROID_NDK_HOME
-        unset Android_NDK
+        unset ANDROID_NDK
         buildozer -v android debug
 
     - name: Upload APK Artifact
