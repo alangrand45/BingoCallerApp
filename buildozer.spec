@@ -19,7 +19,7 @@ source.include_exts = py,png,jpg,kv,atlas,mp3,wav
 version = 0.1
 
 # (list) Application requirements (pinned charset-normalizer avoids wheel incompatibility)
-requirements = python3,kivy,charset-normalizer==3.3.2
+requirements = python3,kivy,charset-normalizer
 
 # (list) Permissions
 android.permissions = INTERNET
