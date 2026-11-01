@@ -22,7 +22,8 @@ source.main_file = main.py
 version = 0.1
 
 # (list) Application requirements
-requirements = python3,kivy
+
+requirements = python3,kivy,charset-normalizer==3.3.2,requests,urllib3,idna,certifi
 
 # (list) Permissions
 android.permissions = INTERNET
