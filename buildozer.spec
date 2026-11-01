@@ -22,7 +22,7 @@ source.main_file = bingo1_1.py
 version = 0.1
 
 # (list) Application requirements
-requirements = python3,kivy,pillow
+requirements = python3,kivy
 
 # (list) Permissions
 android.permissions = INTERNET
