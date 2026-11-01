@@ -18,7 +18,7 @@ source.include_exts = py,png,jpg,kv,atlas,mp3,wav
 # (str) Application versioning
 version = 0.1
 
-# (list) Application requirements (pinned charset-normalizer version to prevent build failure)
+# (list) Application requirements (pinned version avoids Android wheel incompatibility)
 requirements = python3,kivy,charset-normalizer==3.3.2
 
 # (list) Permissions
@@ -40,7 +40,7 @@ android.min_api = 21
 # (int) Android SDK version to use
 android.sdk = 31
 
-# (str) Android NDK version to use
+# (int) Android NDK version to use
 android.ndk = 25b
 
 # (str) Android arch to build for
