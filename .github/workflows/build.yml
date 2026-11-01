@@ -44,9 +44,9 @@ jobs:
         run: |
           script -q -c "buildozer android debug" build_output.log || (cat build_output.log && exit 1)
 
-      - name: Find and Locate APK
+      - name: Locate All APK Files
         run: |
-          echo "Searching for generated APKs..."
+          echo "Listing all .apk files in the repository:"
           find . -name "*.apk"
 
       - name: Upload APK Artifact
@@ -55,4 +55,5 @@ jobs:
           name: package
           path: |
             bin/*.apk
+            **/*.apk
             *.apk
