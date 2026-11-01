@@ -18,7 +18,7 @@ source.include_exts = py,png,jpg,kv,atlas,mp3,wav
 # (str) Application versioning
 version = 0.1
 
-# (list) Application requirements (pinned version avoids Android wheel incompatibility)
+# (list) Application requirements (pinned charset-normalizer avoids wheel incompatibility)
 requirements = python3,kivy,charset-normalizer==3.3.2
 
 # (list) Permissions
@@ -30,7 +30,7 @@ orientation = portrait
 # (bool) Fullscreen
 fullscreen = 0
 
-# --- Android Specific Settings ---
+# --- Android Specific Settings (Aligned for NDK 25b) ---
 # (int) Target Android API
 android.api = 31
 
@@ -40,7 +40,7 @@ android.min_api = 21
 # (int) Android SDK version to use
 android.sdk = 31
 
-# (int) Android NDK version to use
+# (int) Android NDK version to use (pinned to prevent runner conflict)
 android.ndk = 25b
 
 # (str) Android arch to build for
